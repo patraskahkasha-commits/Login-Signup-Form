@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login / Signup</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" id="tabLogin" onclick="switchTab('login')">
+                Login
+            </button>
+
+            <button class="tab" id="tabSignup" onclick="switchTab('signup')">
+                Sign Up
+            </button>
+        </div>
+
+
+        <!-- Login Panel -->
+        <div class="panel" id="loginPanel">
+
+            <h1>Welcome Back</h1>
+            <p class="sub">Login your account</p>
+
+            <div class="success-banner" id="loginSuccess">
+                ✓ Login successful!
+            </div>
+
+            <form id="loginForm" novalidate>
+
+                <div class="field" id="loginEmailField">
+
+                    <label for="loginEmail">Email</label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="you@example.com"
+                    >
+
+                    <div class="msg"></div>
+
+                </div>
+
+
+                <div class="field" id="loginPasswordField">
+
+                    <label for="loginPassword">Password</label>
+
+                    <div class="pw-wrap">
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Password"
+                        >
+
+                        <button
+                            type="button"
+                            class="pw-toggle"
+                            onclick="togglePw('loginPassword', this)"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <div class="msg"></div>
+
+                </div>
+
+
+                <div class="row-between">
+
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+
+                    <a href="#">Forgot password?</a>
+
+                </div>
+
+
+                <button type="submit" class="submit">
+                    Log In
+                </button>
+
+            </form>
+
+
+            <div class="switch-line">
+                No account?
+                <button type="button" onclick="switchTab('signup')">
+                    Sign Up
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- Signup Panel -->
+        <div class="panel panel-hidden" id="signupPanel">
+
+            <h1>Create Account</h1>
+            <p class="sub">Create a new account for free</p>
+
+            <div class="success-banner" id="signupSuccess">
+                ✓ Account created successfully!
+            </div>
+
+            <form id="signupForm" novalidate>
+
+                <!-- Name -->
+                <div class="field" id="signupNameField">
+
+                    <label for="signupName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        placeholder="Ali Khan"
+                    >
+
+                    <div class="msg"></div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="field" id="signupEmailField">
+
+                    <label for="signupEmail">Email</label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder="you@example.com"
+                    >
+
+                    <div class="msg"></div>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="field" id="signupPasswordField">
+
+                    <label for="signupPassword">Password</label>
+
+                    <div class="pw-wrap">
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="At least 8 characters"
+                        >
+
+                        <button
+                            type="button"
+                            class="pw-toggle"
+                            onclick="togglePw('signupPassword', this)"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <div class="strength">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+
+                    <div class="msg"></div>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="field" id="signupConfirmField">
+
+                    <label for="signupConfirm">
+                        Confirm Password
+                    </label>
+
+                    <div class="pw-wrap">
+
+                        <input
+                            type="password"
+                            id="signupConfirm"
+                            placeholder="Confirm password"
+                        >
+
+                        <button
+                            type="button"
+                            class="pw-toggle"
+                            onclick="togglePw('signupConfirm', this)"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <div class="msg"></div>
+
+                </div>
+
+
+                <!-- Terms -->
+                <div class="row-between" style="margin-bottom: 16px;">
+
+                    <label class="checkbox-row">
+
+                        <input type="checkbox" id="terms">
+
+                        I agree to the terms & conditions
+
+                    </label>
+
+                </div>
+
+
+                <button type="submit" class="submit">
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <div class="switch-line">
+
+                Already have an account?
+
+                <button type="button" onclick="switchTab('login')">
+                    Login
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="scrpit.js"></script>
+
+</body>
+
+</html>
+
